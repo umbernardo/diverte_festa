@@ -1,0 +1,30 @@
+#voltarCalendario{
+	border: none;
+	width: 12%;
+	height: 50px;
+	border-radius: 8px;
+	margin-top: 5px;
+	margin-right: 50px;
+	margin-bottom: 5px;
+	background-color: #bbad83;
+	color:#67645b;
+}
+#voltarCalendario:hover{
+	background-color: #bfb79e;
+	color:#67645b;
+}
+#avancarCalendario{
+	border: none;
+	width: 12%;
+	height: 50px;
+	border-radius: 8px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 50px;
+	background-color: #bbad83;
+	color:#67645b;
+}
+#avancarCalendario:hover{
+	background-color: #bfb79e;
+	color:#67645b;
+}

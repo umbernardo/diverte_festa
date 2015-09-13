@@ -1,4 +1,14 @@
-<?php /* @var $this Site */ ?>
+<?php 
+		include_once ('public_assets/php/espaco.php');
+		$informacoes_BD = array(
+		"host_bd" => 'localhost',
+		"usuario_bd" => 'root',
+		"senha_bd" => '',
+		"nome_bd" => 'diverte',
+		"codificacao_bd" => 'utf8'
+		);
+		$espaco = new Espaco($informacoes_BD);
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -16,11 +26,31 @@
     <link href="public_assets/js/fancybox/fancybox.css" rel="stylesheet">
     <link href="public_assets/css/datepicker.css" rel="stylesheet">
     <link href="public_assets/css/main.css" rel="stylesheet">
+	<link href="public_assets/css/index.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="public_assets/images/logo.png">
 
     <script type="text/javascript" src="public_assets/js/jquery.js"></script>
     <script type="text/javascript" src="public_assets/js/bxslider.js"></script>
+	
+	<!-- Pre Carregar Variáveis -->
+	<script type="text/javascript">
+		var stringArrayValores;
+		var stringArrayEspacos;
+		stringArrayValores = "<?php echo $espaco->retornarValoresString(); ?>";
+		stringArrayEspacos = "<?php echo $espaco->retornarEspacosString(); ?>";
+		var valores_Array = stringArrayValores.split("|");
+		var espacos_Array = stringArrayEspacos.split("|");
+		data = new Date();
+		var MES_ATUAL = data.getMonth();
+		var ANO_ATUAL = data.getFullYear();
+		var DIA_ATUAL = data.getDate();
+		diaDoMes = new Date(ANO_ATUAL, MES_ATUAL, 1);
+		var valorVetorialDiaDaSemana = diaDoMes.getDay();
+		var DiasReservados;
+		
+	</script>
+	<script type="text/javascript" src="public_assets/js/index.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -103,8 +133,8 @@
                     <!-- todo bloco abaixo será substituido pelo: http://www.vissit.com/projects/eventCalendar/ -->
                     
                     <table border="1" class="calendar" cellpadding="2" cellspacing="0">
-                        <caption title="Novembro">Novembro 2015</caption>
-                        <tbody>
+                        <caption id="tituloCalendario" title="Novembro"><button id="voltarCalendario"> < </button>Novembro 2015 <button id="avancarCalendario"> > </button></caption>
+                        <tbody id="calendario" >
                             <tr>
                                 <th width="15%" abbr="Domingo" title="Domingo">dom</th>
                                 <th width="14%" abbr="Segunda" title="Segunda">seg</th>
@@ -115,49 +145,58 @@
                                 <th width="15%" abbr="Sábado" title="Sábado">sáb</th>
                             </tr>
                             <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>1</td>
-                                <td>2</td>
+                                <td id="dom1">-</td>
+                                <td id="seg1">-</td>
+                                <td id="ter1">-</td>
+                                <td id="qua1">-</td>
+                                <td id="qui1">-</td>
+                                <td id="sex1">-</td>
+                                <td id="sab1">-</td>
                             </tr>
                             <tr>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
+                                <td id="dom2">-</td>
+                                <td id="seg2">-</td>
+                                <td id="ter2">-</td>
+                                <td id="qua2">-</td>
+                                <td id="qui2">-</td>
+                                <td id="sex2">-</td>
+                                <td id="sab2">-</td>
                             </tr>
                             <tr>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                                <td>13</td>
-                                <td>14</td>
-                                <td>15</td>
-                                <td>16</td>
+                                <td id="dom3">-</td>
+                                <td id="seg3">-</td>
+                                <td id="ter3">-</td>
+                                <td id="qua3">-</td>
+                                <td id="qui3">-</td>
+                                <td id="sex3">-</td>
+                                <td id="sab3">-</td>
                             </tr>
                             <tr>
-                                <td>17</td>
-                                <td>18</td>
-                                <td>19</td>
-                                <td>20</td>
-                                <td>21</td>
-                                <td>22</td>
-                                <td>23</td>
+                                <td id="dom4">-</td>
+                                <td id="seg4">-</td>
+                                <td id="ter4">-</td>
+                                <td id="qua4">-</td>
+                                <td id="qui4">-</td>
+                                <td id="sex4">-</td>
+                                <td id="sab4">-</td>
                             </tr>
                             <tr>
-                                <td>24</td>
-                                <td>25</td>
-                                <td>26</td>
-                                <td class="reservado">27</td>
-                                <td>28</td>
-                                <td>29</td>
-                                <td>30</td>
+                                <td id="dom5">-</td>
+                                <td id="seg5">-</td>
+                                <td id="ter5">-</td>
+                                <td id="qua5">-</td>
+                                <td id="qui5">-</td>
+                                <td id="sex5">-</td>
+                                <td id="sab5">-</td>
+                            </tr>
+							<tr>
+                                <td id="dom6">-</td>
+                                <td id="seg6">-</td>
+                                <td id="ter6">-</td>
+                                <td id="qua6">-</td>
+                                <td id="qui6">-</td>
+                                <td id="sex6">-</td>
+                                <td id="sab6">-</td>
                             </tr>
                         </tbody>
                     </table>
@@ -167,20 +206,33 @@
                 </div>
                 <div class="col-md-6">
                     <h3>Espaços</h3>
-                    <form class="row" name="cadastro" role="form" method="post" action="<?= $this->url(array('reservas-sucesso')) ?>" data-toggle="validator">
+                    <form class="row" name="cadastro" role="form" method="post" action="public_assets/php/realizarReserva.php" data-toggle="validator">
                         <label class="col-xs-12 form-group">
-                            <select class="form-control" name="Escolha a unidade">
+                            <select onChange="selecionarEspaco()" id="selecionador" class="form-control" name="Escolha a unidade">
                                 <option selected>selecione o espaço</option>
-                                <option>Diverte Festa Cambuí</option>
-                                <option>Diverte Festa Taquaral</option>
-                                <option>Diverte Festa Sousas</option>
-                                <option>Diverte Festa Barão Geraldo</option>
+								<?php
+									$informacoes_BD = array(
+										"host_bd" => 'localhost',
+										"usuario_bd" => 'root',
+										"senha_bd" => '',
+										"nome_bd" => 'diverte',
+										"codificacao_bd" => 'utf8'
+										);
+									$espaco = new Espaco($informacoes_BD);
+									$resultado = $espaco->retornarArrayEspacoTag("<option>","</option>");
+									foreach($resultado as $valor){
+										echo "\t\t\t\t$valor\n";
+									}
+								
+								?>
                             </select>
                             <div class="help-block with-errors"></div>
                         </label>
-                        <h5>R$ 160,00 - Valor diário</h5>
+						
+						<h5 id="preco"> </h5>
+							
                         <label class="col-xs-12 form-group">
-                            <input name="Datas Disponíveis" type="text" class="form-control datepicker" placeholder="Data selecionada" required>
+                            <input name="Datas Disponíveis" id="dataT" type="text" class="form-control datepicker" placeholder="Data selecionada" readonly="readonly" required>
                             <div class="help-block with-errors"></div>
                         </label>
                         <label class="col-xs-12 form-group">
@@ -188,11 +240,11 @@
                             <div class="help-block with-errors"></div>
                         </label>
                         <label class="col-xs-12 form-group">
-                            <input name="email" type="text" class="form-control" placeholder="E-mail" required>
+                            <input name="email" type="email" class="form-control" placeholder="E-mail" required>
                             <div class="help-block with-errors"></div>
                         </label>
                         <label class="col-xs-12 form-group">
-                            <input name="telefone" type="text" class="form-control" placeholder="Telefone" required>
+                            <input name="telefone" type="phone" class="form-control" placeholder="Telefone" required>
                             <div class="help-block with-errors"></div>
                         </label>
 
@@ -271,5 +323,7 @@
     <script type="text/javascript" src="public_assets/js/datepicker.js"></script>
     <script type="text/javascript" src="public_assets/js/validator.js"></script>
     <script type="text/javascript" src="public_assets/js/main.js"></script>
+	
+
 </body>
 </html>
