@@ -1,12 +1,8 @@
 <?php 
 		include_once ('public_assets/php/espaco.php');
-		$informacoes_BD = array(
-		"host_bd" => 'localhost',
-		"usuario_bd" => 'root',
-		"senha_bd" => '',
-		"nome_bd" => 'diverte',
-		"codificacao_bd" => 'utf8'
-		);
+		include_once ('public_assets/php/ConfiguracaoBanco.class.php');
+		$Configuracao_Banco = new ConfiguracaoBanco();
+		$informacoes_BD = $Configuracao_Banco->getConfiguracaoBanco();
 		$espaco = new Espaco($informacoes_BD);
 ?>
 <!DOCTYPE HTML>
