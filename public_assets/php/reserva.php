@@ -13,6 +13,8 @@ $informacoes_BD = array(
 	$espaco = new Espaco($informacoes_BD);
 	$Array = $espaco->retornarArrayEspacoTag(" "," ");
 	$espaco->selecionarEspaco("Diverte Festa Cambuí");
+	$espaco->retornarDatasAlugadas();
+	//var_dump($espaco->retornarDatasAlugadas());
 	//foreach($Array as $valor){
 	//	echo "$valor\n";
 	//}

@@ -1,12 +1,8 @@
 <?php 
 		include_once ('public_assets/php/espaco.php');
-		$informacoes_BD = array(
-		"host_bd" => 'localhost',
-		"usuario_bd" => 'root',
-		"senha_bd" => '',
-		"nome_bd" => 'diverte',
-		"codificacao_bd" => 'utf8'
-		);
+		include_once ('public_assets/php/ConfiguracaoBanco.class.php');
+		$config = new ConfiguracaoBanco();
+		$informacoes_BD = $config->getConfiguracaoBanco();
 		$espaco = new Espaco($informacoes_BD);
 ?>
 <!DOCTYPE HTML>
@@ -91,7 +87,7 @@
 
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html" title="Inicial">Inicial</a></li>
+                        <li><a href="index.php" title="Inicial">Inicial</a></li>
                         <li><a href="reservas.html">Reservas</a></li>
                         <li><a href="sobre.html" title="Sobre">Sobre</a></li>
                         <li><a href="contato.html" title="Contato">Contato</a></li>
@@ -124,6 +120,19 @@
         <div class="col-sm-8">
             <h3>OBRIGADO!</h3>
             <p>Sua Reserva foi feita com sucesso! Por Favor, confirme as informações abaixo.</p>
+			<h3> Espaço:</h3><p><?php echo $_GET['unidade'];?></p>
+			<h3> Locatário:</h3><p><?php echo $_GET['nome'];?></p>
+			<h3> E-mail:</h3><p><?php echo $_GET['email'];?></p>
+			<h3> Telefone:</h3><p><?php echo $_GET['telefone'];?></p>
+			<h3> Data:</h3><p><?php echo $_GET['data'];?></p>
+			<form action="boleto.php" method="POST">
+				<input type="hidden" name="Nome" value="<?php echo $_GET['nome'];?>"/>
+				<input type="hidden" name="Unidade" value="<?php echo $_GET['unidade'];?>"/> 
+				<input type="hidden" name="Telefone" value="<?php echo $_GET['telefone'];?>"/> 
+				<input type="hidden" name="E-mail" value="<?php echo $_GET['email'];?>"/> 
+				<input type="hidden" name="Data" value="<?php echo $_GET['data'];?>"/> 
+				<label class="col-sm-6 col-xs-12 form-group"><input name="Submit" type="submit" value="Gerar Boleto"></label>
+			</form>
 
         </div>
     </div>

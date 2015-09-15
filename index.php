@@ -44,7 +44,8 @@
 		diaDoMes = new Date(ANO_ATUAL, MES_ATUAL, 1);
 		var valorVetorialDiaDaSemana = diaDoMes.getDay();
 		var DiasReservados;
-		
+		var datasReservadasString = "<?php echo $espaco->retornarDatasAlugadas(); ?>";
+		var datasReservadasArray = datasReservadasString.split("|");
 	</script>
 	<script type="text/javascript" src="public_assets/js/index.js"></script>
 
@@ -127,7 +128,7 @@
                 <div class="col-md-6">
 
                     <!-- todo bloco abaixo será substituido pelo: http://www.vissit.com/projects/eventCalendar/ -->
-                    
+                    <h3 id="TituloEspaco"> </h3>
                     <table border="1" class="calendar" cellpadding="2" cellspacing="0">
                         <caption id="tituloCalendario" title="Novembro"><button id="voltarCalendario"> < </button>Novembro 2015 <button id="avancarCalendario"> > </button></caption>
                         <tbody id="calendario" >
@@ -207,13 +208,6 @@
                             <select onChange="selecionarEspaco()" id="selecionador" class="form-control" name="Escolha a unidade">
                                 <option selected>selecione o espaço</option>
 								<?php
-									$informacoes_BD = array(
-										"host_bd" => 'localhost',
-										"usuario_bd" => 'root',
-										"senha_bd" => '',
-										"nome_bd" => 'diverte',
-										"codificacao_bd" => 'utf8'
-										);
 									$espaco = new Espaco($informacoes_BD);
 									$resultado = $espaco->retornarArrayEspacoTag("<option>","</option>");
 									foreach($resultado as $valor){

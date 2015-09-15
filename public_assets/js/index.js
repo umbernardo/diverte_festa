@@ -12,11 +12,20 @@ selecionarEspaco = function(){
 			var string = valores_Array[i];
 			string = " Preço: R$ "+string.replace(".",",");
 			document.getElementById("preco").innerHTML = string;
+			document.getElementById("TituloEspaco").innerHTML = valorSelecionado.value;
 		}
 		else if(valorSelecionado.value == "selecione o espaço"){
 			document.getElementById("preco").innerHTML = "";
+			document.getElementById("TituloEspaco").innerHTML = " ";
 		}
 	}
+	limparCalendario();
+	MES_ATUAL = data.getMonth();
+	ANO_ATUAL = data.getFullYear();
+	DIA_ATUAL = data.getDate();
+	diaDoMes = new Date(ANO_ATUAL, MES_ATUAL, 1);
+	valorVetorialDiaDaSemana = diaDoMes.getDay();
+	gerarCalendario();
 }
 
 function ObterDiaDaSemana(ano,mes,dia){
@@ -104,7 +113,7 @@ gerarCalendario = function(){
 	var DiaSemana = ObterDiaDaSemana(ANO_ATUAL,MES_ATUAL,DIA_ATUAL);
 	var MesDoAno = ObterMesDoAno(ANO_ATUAL,MES_ATUAL,DIA_ATUAL);
 	var semana = 1;
-	var diadoMes = 1;
+	var diadoMes = 01;
 	for(i = 1; i<=numeroDeDias; i++){
 		if(valorVetorialDiaDaSemana >6){
 			semana = semana + 1;
@@ -181,7 +190,10 @@ gerarCalendario = function(){
 	var mes_Anterior = ObterMesDoAno(ANO_ATUAL,MES_ATUAL-1,DIA_ATUAL);
 	document.getElementById("tituloCalendario").innerHTML ="<button id='voltarCalendario' onClick='voltarMes()' title='"+mes_Anterior+"'> < </button>  "+ MesDoAno +" "+ANO_ATUAL +" <button id='avancarCalendario' onClick='avancarMes()' title='"+proximo_mes+"'> > </button>";
 	document.getElementById("tituloCalendario").title=MesDoAno;
+	mostrarDatasEmprestadas();
 }
+
+
 
 function limparCalendario(){
 	var semana = 1;
@@ -263,6 +275,190 @@ function limparCalendario(){
 
 }
 
+ function mostrarDatasEmprestadas(){
+	var semana = 1;
+	var diadoMes = 1;
+	var k = 0;
+	for(i = 1; i<=42; i++){
+			if(k >6){
+				semana = semana + 1;
+				k = 0;
+			}
+			switch(k){
+				case 0:
+					var string = "dom";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				case 1:
+					var string = "seg";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				case 2:
+					var string = "ter";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				case 3:
+					var string = "qua";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				case 4:
+					var string = "qui";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				case 5:
+					var string = "sex";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				case 6:
+					var string = "sab";
+					string = string + semana;
+					var quantidade = datasReservadasArray.length;
+					for(g=0;g<quantidade;g++){
+						var array = datasReservadasArray[g].split(";");
+						var data = array[0];
+						var dia = data.substring(8,10);
+						if(dia.indexOf(0) > -1){
+							dia = dia.substring(1,2);
+						}
+						var mes = data.substring(6,7);
+						var ano = data.substring(0,4);
+						var MES = MES_ATUAL+1;
+						var campoSelecionado = document.getElementById("selecionador").value;
+						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
+								document.getElementById(string).className = "reservado";
+														
+						}
+					}
+					k = k + 1;
+					string = null;
+					diadoMes = diadoMes +1;
+					break;
+				
+			}
+		}
+
+} 
+
 avancarMes = function(){
 	if(MES_ATUAL >= 11){
 		MES_ATUAL = 0;
@@ -310,6 +506,12 @@ voltarMes = function(){
 		if(DiasReservados == true){
 			alert("Você não pode reservar mais de um dia ao mesmo tempo!\n Por Favor, Cancele a reserva já realizada!");
 			campoData.className=" ";
+		}
+		else if(document.getElementById("selecionador").value == "selecione o espaço"){
+			campoData.className=" ";
+			DiasReservados = false;
+			var t = campoData.id;
+			document.getElementById("dataT").value="";
 		}
 		else{
 			campoData.className="PRE-reservado";
