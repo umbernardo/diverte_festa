@@ -62,7 +62,7 @@ if($resultado == null){
 	$usuarioExiste = $mysql->mysqlSelect("diverte_usuario",'Nome',$nome);
 	if($usuarioExiste != null){
 		$mysql->mysqlInsert("diverte_alugueis","ID_USUARIO,ID_ESPACO,DATA","'".$usuarioExiste[0]['ID']."','".$ID_Espaco[0]['ID']."','".$dataFinal."'");
-		$home_url = 'http://' . $_SERVER['HTTP_HOST'] ."/diverte_festa/obrigado.php?unidade=$unidadeEscolhida&nome=$nome&email=$email&telefone=$telefone&data=$dataFinal&preco=$preco";
+		$home_url = 'http://' . $_SERVER['HTTP_HOST'] ."/diverte_festas/obrigado.php?unidade=$unidadeEscolhida&nome=$nome&email=$email&telefone=$telefone&data=$dataFinal&preco=$preco";
 
 
 		header('Location: ' . $home_url);
@@ -71,7 +71,7 @@ if($resultado == null){
 		$mysql->mysqlInsert("diverte_usuario","NOME,EMAIL,TELEFONE","'".$nome."','".$email."','".$telefone."'");
 		$ID_usuario_criado = $mysql->mysqlSelect("diverte_usuario", "NOME", $nome);
 		$mysql->mysqlInsert("diverte_alugueis","ID_USUARIO,ID_ESPACO,DATA","'".$ID_usuario_criado[0]['ID']."','".$ID_Espaco[0]['ID']."','".$dataFinal."'");
-		$home_url = 'http://' . $_SERVER['HTTP_HOST'] ."/diverte_festa/obrigado.php?unidade=$unidadeEscolhida&nome=$nome&email=$email&telefone=$telefone&data=$dataFinal&preco=$preco";
+		$home_url = 'http://' . $_SERVER['HTTP_HOST'] ."/diverte_festas/obrigado.php?unidade=$unidadeEscolhida&nome=$nome&email=$email&telefone=$telefone&data=$dataFinal&preco=$preco";
 
 
 		header('Location: ' . $home_url);

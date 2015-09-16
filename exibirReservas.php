@@ -3,7 +3,7 @@
   $senha = $_POST['senha'];
 
   if(($usuario == 'admin') && ($senha == 'admin')){
-    $home_url = 'http://' . $_SERVER['HTTP_HOST'] ."/diverte_festa/administracao.php";
+    $home_url = 'http://' . $_SERVER['HTTP_HOST'] ."/diverte_festas/administracao.php";
 
 
 		header('Location: ' . $home_url);

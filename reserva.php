@@ -51,7 +51,7 @@
                     <select name="nav-menu" class="navbar-toggle">
                         <option>Menu</option>
                         <option value="index.php">Inicial</option>
-                        <option value="reservas.html">Reservas</a></li>
+                        <option value="reserva.php">Reservas</a></li>
                         <option value="sobre.html">Sobre</a></li>
                         <option value="contato.html">Contato</a></li>
                     </select>
@@ -60,7 +60,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php" title="Inicial">Inicial</a></li>
-                        <li><a href="reservas.html">Reservas</a></li>
+                        <li><a href="reserva.php">Reservas</a></li>
                         <li><a href="sobre.html" title="Sobre">Sobre</a></li>
                         <li><a href="contato.html" title="Contato">Contato</a></li>
                     </ul>
@@ -146,7 +146,7 @@
                     <div class="col-sm-3">
                         <ul>
                             <li><a href="index.php" title="Inicial">Inicial</a></li>
-                            <li><a href="reservas.html" title="Reservas">Reservas</a></li>
+                            <li><a href="reserva.php" title="Reservas">Reservas</a></li>
                             <li><a href="sobre.html" title="Imagens">Sobre</a></li>
                             <li><a href="contato.html" title="Contato">Contato</a></li>
                         </ul>

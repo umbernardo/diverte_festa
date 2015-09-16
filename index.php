@@ -281,7 +281,7 @@
 										<div class="col-sm-3">
 												<ul>
 														<li><a href="index.php" title="Inicial">Inicial</a></li>
-														<li><a href="reservas.html" title="Reservas">Reservas</a></li>
+														<li><a href="reserva.php" title="Reservas">Reservas</a></li>
 														<li><a href="sobre.html" title="Imagens">Sobre</a></li>
 														<li><a href="contato.html" title="Contato">Contato</a></li>
 												</ul>

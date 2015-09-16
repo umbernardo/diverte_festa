@@ -507,7 +507,7 @@ voltarMes = function(){
 	}
 	else{
 		if(DiasReservados == true){
-			alert("Você não pode reservar mais de um dia ao mesmo tempo!\n Por Favor, Cancele a reserva já realizada!");
+			alert("Você não pode reservar mais de um dia ao mesmo tempo!\n Por Favor, Desmarque a data selecionada!");
 			campoData.className=" ";
 		}
 		else if(document.getElementById("selecionador").value == "selecione o espaço"){
