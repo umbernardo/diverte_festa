@@ -515,6 +515,7 @@ voltarMes = function(){
 			DiasReservados = false;
 			var t = campoData.id;
 			document.getElementById("dataT").value="";
+      alert("Por Favor, selecione um local antes de escolher a data!");
 		}
 		else{
 			campoData.className="PRE-reservado";
