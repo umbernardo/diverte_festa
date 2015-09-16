@@ -51,7 +51,7 @@
                     <select name="nav-menu" class="navbar-toggle">
                         <option>Menu</option>
                         <option value="index.php">Inicial</option>
-                        <option value="reserva.php.html">Reservas</a></li>
+                        <option value="reserva.php">Reservas</a></li>
                         <option value="sobre.html">Sobre</a></li>
                         <option value="contato.html">Contato</a></li>
                     </select>
@@ -81,36 +81,38 @@
 
     <div class="row margin30 info-content">
         <div class="col-xs-12">
-            <h2>Formas de Pagamento</h2>
+            <h2>Informações</h2>
         </div>
     </div>
     <div class="row margin30 info-content">
         <div class="col-sm-4">
-            <img src="public_assets/images/boleto.png" width="350">
+            <img src="public_assets/images/sobre.png">
 						<p> </p>
-						<p> Para realizar o pagamento, basta clicar no botão <strong> GERAR BOLETO </strong> logo abaixo.</p>
         </div>
 
         <div class="col-sm-8">
-            <h3>OBRIGADO!</h3>
-            <p>Sua Reserva foi feita com sucesso! Por Favor, confirme as informações abaixo.</p>
-						<p> Para finalizar, basta clicar no botão abaixo para pagamento com boleto </p>
-						<h3> Espaço:</h3><p><?php echo $_GET['unidade'];?></p>
-						<h3> Preco: </h3><p> <?php echo$_GET['preco'];?></p>
-						<h3> Locatário:</h3><p><?php echo $_GET['nome'];?></p>
-						<h3> E-mail:</h3><p><?php echo $_GET['email'];?></p>
-						<h3> Telefone:</h3><p><?php echo $_GET['telefone'];?></p>
-						<h3> Data :</h3><p><?php echo $_GET['data'];?>  (Ano-Mês-Dia)</p>
-						<form action="boleto.php" method="POST">
-								<input type="hidden" name="Nome" value="<?php echo $_GET['nome'];?>"/>
-								<input type="hidden" name="Unidade" value="<?php echo $_GET['unidade'];?>"/>
-								<input type="hidden" name="Telefone" value="<?php echo $_GET['telefone'];?>"/>
-								<input type="hidden" name="E-mail" value="<?php echo $_GET['email'];?>"/>
-								<input type="hidden" name="Data" value="<?php echo $_GET['data'];?>"/>
-								<label class="col-sm-6 col-xs-12 form-group"><input name="Submit" type="submit" value="Gerar Boleto"></label>
-							</form>
-
+          <h2> Quem Somos Nós? </h2>
+          <p> A <strong> Diverte Festa Ltda</strong> é uma empresa comprometida e proporcionar o que há de melhor em salão de eventos no mercado. Nossas
+          instalações permite a realização desde <strong> Casamentos Tradicionais </strong> a <strong> Baladas </strong> e <strong> Festas para Crianças </strong>.</p>
+          <p> </p>
+          <h3> Venha nos conhecer! Agende uma Visita </h3>
+          <p> </p>
+          <br>
+          <br>
+          <br>
+          <h2><strong> Galeria de Fotos</strong> </h2>
         </div>
+
+    </div>
+    <div class="row margin30 info-content">
+      <div class="col-sm-6">
+        <h3> Diverte Festa Taquaral </h3>
+        <img src="public_assets/images/salao1.jpg" width="500">
+      </div>
+      <div class="col-sm-6">
+        <h3> Diverte Festa Barão Geraldo </h3>
+        <img src="public_assets/images/salao2.jpg" width="500">
+      </div>
     </div>
 </article>
 
@@ -146,7 +148,7 @@
                     <div class="col-sm-3">
                         <ul>
                             <li><a href="index.php" title="Inicial">Inicial</a></li>
-                            <li><a href="reserva.php" title="Reservas">Reservas</a></li>
+                            <li><a href="reservas.html" title="Reservas">Reservas</a></li>
                             <li><a href="sobre.html" title="Imagens">Sobre</a></li>
                             <li><a href="contato.html" title="Contato">Contato</a></li>
                         </ul>

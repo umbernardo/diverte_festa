@@ -14,9 +14,9 @@ jQuery(function($) {
 
 	    //Fancybox - Zoom Image
 	    $('.fancybox').fancybox({
-	    	openEffect: 'fade', 
-	    	closeEffect: 'fade', 
-	    	nextEffect: 'fade', 
+	    	openEffect: 'fade',
+	    	closeEffect: 'fade',
+	    	nextEffect: 'fade',
 	    	prevEffect: 'fade'
 	    });
 

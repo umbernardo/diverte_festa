@@ -30,7 +30,7 @@ class MYSQL{
 	private function conectar(){
 		// Monta string de conexão;
 		$stringDeConexao = 'mysql:host='.$this->host_bd.';';
-		
+
 		$stringDeConexao = $stringDeConexao.'bdname='.$this->nome_bd.';charset='.$this->codificacao_bd;
 		// Tenta conectar
 		try{
@@ -54,7 +54,7 @@ class MYSQL{
 		//var_dump($resultado);
 		return $resultado;
 	}
-	
+
 	public function mysqlSelectQuery($query){
 		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
 		$statement->execute();
@@ -63,25 +63,46 @@ class MYSQL{
 		$resultado = $statement->fetchAll();
 		return $resultado;
 	}
-	
+
 	public function mysqlInsert($tabela, $campos, $valores){
 		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
 		$statement->execute();
 		$statement = $this->conexao_bd->prepare("INSERT INTO ".$tabela." (".$campos.") VALUES (".$valores.")");
 		$statement->execute();
 	}
-	
+
+	public function mysqlInsertQuery($query){
+		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
+		$statement->execute();
+		$statement = $this->conexao_bd->prepare($query);
+		$statement->execute();
+	}
+
 	public function mysqlUpdate($tabela, $campo, $valor, $campoCondicao , $valorCondicao){
 		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
 		$statement->execute();
 		$statement = $this->conexao_bd->prepare("UPDATE ".$tabela." SET ".$campo." = ".$valor." WHERE ".$campoCondicao. " = ".$valorCondicao);
 		$statement->execute();
 	}
-	
+
+	public function mysqlUpdateQuery($query){
+		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
+		$statement->execute();
+		$statement = $this->conexao_bd->prepare($query);
+		$statement->execute();
+	}
+
 	public function mysqlDelete($tabela, $campo, $valor){
 		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
 		$statement->execute();
 		$statement = $this->conexao_bd->prepare("DELETE FROM ".$tabela." WHERE ".$campo." = ".$valor);
+		$statement->execute();
+	}
+
+	public function mysqlDeleteQuery($query){
+		$statement = $this->conexao_bd->prepare("use ".$this->nome_bd);
+		$statement->execute();
+		$statement = $this->conexao_bd->prepare($query);
 		$statement->execute();
 	}
 

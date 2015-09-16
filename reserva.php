@@ -51,7 +51,7 @@
                     <select name="nav-menu" class="navbar-toggle">
                         <option>Menu</option>
                         <option value="index.php">Inicial</option>
-                        <option value="reserva.php.html">Reservas</a></li>
+                        <option value="reservas.html">Reservas</a></li>
                         <option value="sobre.html">Sobre</a></li>
                         <option value="contato.html">Contato</a></li>
                     </select>
@@ -60,7 +60,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php" title="Inicial">Inicial</a></li>
-                        <li><a href="reserva.php">Reservas</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
                         <li><a href="sobre.html" title="Sobre">Sobre</a></li>
                         <li><a href="contato.html" title="Contato">Contato</a></li>
                     </ul>
@@ -81,36 +81,36 @@
 
     <div class="row margin30 info-content">
         <div class="col-xs-12">
-            <h2>Formas de Pagamento</h2>
+            <h2>Reservas</h2>
         </div>
     </div>
     <div class="row margin30 info-content">
         <div class="col-sm-4">
-            <img src="public_assets/images/boleto.png" width="350">
+            <img src="public_assets/images/key.png">
 						<p> </p>
-						<p> Para realizar o pagamento, basta clicar no botão <strong> GERAR BOLETO </strong> logo abaixo.</p>
+						<p> Para visualizar as reservas já realizadas, entre com o usuário e senha. </p>
         </div>
 
-        <div class="col-sm-8">
-            <h3>OBRIGADO!</h3>
-            <p>Sua Reserva foi feita com sucesso! Por Favor, confirme as informações abaixo.</p>
-						<p> Para finalizar, basta clicar no botão abaixo para pagamento com boleto </p>
-						<h3> Espaço:</h3><p><?php echo $_GET['unidade'];?></p>
-						<h3> Preco: </h3><p> <?php echo$_GET['preco'];?></p>
-						<h3> Locatário:</h3><p><?php echo $_GET['nome'];?></p>
-						<h3> E-mail:</h3><p><?php echo $_GET['email'];?></p>
-						<h3> Telefone:</h3><p><?php echo $_GET['telefone'];?></p>
-						<h3> Data :</h3><p><?php echo $_GET['data'];?>  (Ano-Mês-Dia)</p>
-						<form action="boleto.php" method="POST">
-								<input type="hidden" name="Nome" value="<?php echo $_GET['nome'];?>"/>
-								<input type="hidden" name="Unidade" value="<?php echo $_GET['unidade'];?>"/>
-								<input type="hidden" name="Telefone" value="<?php echo $_GET['telefone'];?>"/>
-								<input type="hidden" name="E-mail" value="<?php echo $_GET['email'];?>"/>
-								<input type="hidden" name="Data" value="<?php echo $_GET['data'];?>"/>
-								<label class="col-sm-6 col-xs-12 form-group"><input name="Submit" type="submit" value="Gerar Boleto"></label>
-							</form>
+        <div class="col-sm-4">
+          <h3> Autenticação </h3>
+            <form action="exibirReservas.php" method="POST">
+              <label class="col-xs-12 form-group">
+                  <input name="usuario" type="text" class="form-control" placeholder="Usuário" required>
+                  <div class="help-block with-errors"></div>
+              </label>
+              <label class="col-xs-12 form-group">
+                  <input name="senha" type="password" class="form-control" placeholder="Senha" required>
+                  <div class="help-block with-errors"></div>
+              </label>
+                <label class="col-sm-12 col-xs-12 form-group"><input name="Submit" type="submit" value="entrar"></label>
+              </form>
 
         </div>
+
+        <div class="col-sm-4">
+        </div>
+
+
     </div>
 </article>
 
@@ -146,7 +146,7 @@
                     <div class="col-sm-3">
                         <ul>
                             <li><a href="index.php" title="Inicial">Inicial</a></li>
-                            <li><a href="reserva.php" title="Reservas">Reservas</a></li>
+                            <li><a href="reservas.html" title="Reservas">Reservas</a></li>
                             <li><a href="sobre.html" title="Imagens">Sobre</a></li>
                             <li><a href="contato.html" title="Contato">Contato</a></li>
                         </ul>

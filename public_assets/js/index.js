@@ -1,21 +1,24 @@
-window.onload = initPage;  
-  
-function initPage(){  
+window.onload = initPage;
+
+function initPage(){
   gerarCalendario();
-} 
+}
 
 selecionarEspaco = function(){
 	var valorSelecionado = document.getElementById("selecionador");
-	
+
 	for (i in espacos_Array){
 		if(espacos_Array[i] == valorSelecionado.value){
 			var string = valores_Array[i];
+      string1 = "R$ "+string.replace(".",",");
 			string = " Preço: R$ "+string.replace(".",",");
 			document.getElementById("preco").innerHTML = string;
+      document.getElementById("campoPreco").setAttribute('value', string1);
 			document.getElementById("TituloEspaco").innerHTML = valorSelecionado.value;
 		}
 		else if(valorSelecionado.value == "selecione o espaço"){
 			document.getElementById("preco").innerHTML = "";
+      document.getElementById("CampoPreco").setAttribute('value',string);
 			document.getElementById("TituloEspaco").innerHTML = " ";
 		}
 	}
@@ -183,7 +186,7 @@ gerarCalendario = function(){
 				string = null;
 				diadoMes = diadoMes +1;
 				break;
-			
+
 		}
 	}
 	var proximo_mes = ObterMesDoAno(ANO_ATUAL,MES_ATUAL+1,DIA_ATUAL);
@@ -268,7 +271,7 @@ function limparCalendario(){
 					string = null;
 					diadoMes = diadoMes +1;
 					break;
-				
+
 			}
 			document.getElementById("dataT").value="";
 		}
@@ -302,7 +305,7 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
@@ -326,7 +329,7 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
@@ -350,7 +353,7 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
@@ -374,7 +377,7 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
@@ -398,7 +401,7 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
@@ -422,7 +425,7 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
@@ -446,18 +449,18 @@ function limparCalendario(){
 						var campoSelecionado = document.getElementById("selecionador").value;
 						if((dia == document.getElementById(string).innerHTML) && (mes == MES) && (ano == ANO_ATUAL) && (campoSelecionado == array[1])){
 								document.getElementById(string).className = "reservado";
-														
+
 						}
 					}
 					k = k + 1;
 					string = null;
 					diadoMes = diadoMes +1;
 					break;
-				
+
 			}
 		}
 
-} 
+}
 
 avancarMes = function(){
 	if(MES_ATUAL >= 11){
@@ -467,7 +470,7 @@ avancarMes = function(){
 	else{
 		MES_ATUAL = MES_ATUAL + 1;
 		var quantidadeDeDiasMes = ObterNumeroDeDiasPorMes(MES_ATUAL);
-		
+
 	}
 	 data = new Date(ANO_ATUAL,MES_ATUAL,1);
 	 DIA_ATUAL = 1;
@@ -482,9 +485,9 @@ voltarMes = function(){
 		ANO_ATUAL = ANO_ATUAL - 1;
 	}
 	else{
-		MES_ATUAL = MES_ATUAL - 1;	
+		MES_ATUAL = MES_ATUAL - 1;
 		var quantidadeDeDiasMes = ObterNumeroDeDiasPorMes(MES_ATUAL);
-		
+
 	}
 	 data = new Date(ANO_ATUAL,MES_ATUAL,1);
 	 DIA_ATUAL = 1;

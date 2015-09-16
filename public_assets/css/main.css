@@ -68,6 +68,7 @@ section{padding-bottom:30px;}
 .info-content .calendar th{text-align:center;}
 .info-content .calendar td.reservado{color:#FFF; background:#f38866;}
 .info-content .calendar td.PRE-reservado{color:#000; background:#faff7f;}
+.info-content .calendar td.TituloTabela{color:#FFF; background:#9d9d9d;}
 
 .info-content .calendar ul{display:block; width:60%; text-align:left; margin-left:27%; padding:20px 0;}
 .info-content .calendar ul li{font-size:17px; line-height:110%; margin-bottom:10px;}
@@ -89,7 +90,7 @@ textarea{resize:none;}
 .form-group :-ms-input-placeholder{color:#BBAD83; font:normal 18px/120% 'museo500', Arial;}
 
 .btn-primary{border:1px solid #BBAD83; background:#BBAD83; color:#67645B; font:normal 18px/120% 'museo500', Arial; padding:7px 38px; margin-bottom:30px; transition:0.4s; border-radius:18px;}
-.btn-primary:hover{border:1px solid #BBAD83; background:#BBAD83;} 
+.btn-primary:hover{border:1px solid #BBAD83; background:#BBAD83;}
 
 
 
@@ -119,7 +120,7 @@ footer .newsletter .form-control{background:#736E61;}
 footer .border-bottom{border-bottom:1px solid #908B7C;}
 footer .border-top{border-top:1px solid #2A2822;}
 footer .copyright{font:normal 16px/100% 'museo300', Arial; color:#BBAD83; padding-top:32px; padding-bottom:32px;}
-footer .obelisco a{color: #908B7C; margin-top:30px; float:right;} 
+footer .obelisco a{color: #908B7C; margin-top:30px; float:right;}
 footer .obelisco a:hover{background-position:left bottom;}
 
 
